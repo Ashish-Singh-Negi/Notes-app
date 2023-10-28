@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import Note from "./Note";
 import AddNote from "./AddNote";
@@ -39,7 +39,7 @@ const Home = () => {
 
   useEffect(() => {
     const allSavedNotes = JSON.parse(
-      (localStorage.getItem("AllSavedNotes")|| '')
+      String(localStorage.getItem("AllSavedNotes"))
     );
     setNotes(allSavedNotes);
   }, []);

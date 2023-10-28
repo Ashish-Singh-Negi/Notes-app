@@ -39,7 +39,7 @@ const Home = () => {
 
   useEffect(() => {
     const allSavedNotes = JSON.parse(
-      String(localStorage.getItem("AllSavedNotes"))
+      (localStorage.getItem("AllSavedNotes")|| '')
     );
     setNotes(allSavedNotes);
   }, []);

@@ -1,6 +1,12 @@
 import React from "react";
 
-const AddNote = ({ clickHandler, noteTextIs, noteTextFunction }) => {
+interface PropsType {
+  clickHandler : ()=> void,
+  noteTextIs: string,
+  noteTextFunction : (para:string)=>void
+}
+
+const AddNote = ({ clickHandler, noteTextIs, noteTextFunction }:PropsType) => {
   return (
     <div className="add-notes-card">
       <textarea

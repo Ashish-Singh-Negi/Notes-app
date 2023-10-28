@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import Note from "./Note";
 import AddNote from "./AddNote";
-import { json } from "react-router-dom";
 
 type NotesType = {
   id: string;
@@ -15,6 +14,8 @@ const Home = () => {
 
   const [noteText, setNoteTest] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
+
+  const [isTrue, setIsTrue] = useState<boolean>(false);
 
   const addNoteHandler = () => {
     const date = new Date();
@@ -44,9 +45,8 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    notes.length >= 1
-      ? localStorage.setItem("AllSavedNotes", JSON.stringify(notes))
-      : "";
+    isTrue ? localStorage.setItem("AllSavedNotes", JSON.stringify(notes)) : "";
+    setIsTrue(true);
   }, [notes]);
 
   return (

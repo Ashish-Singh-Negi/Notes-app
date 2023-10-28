@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap");
+@import "./colors.scss";
+
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  > p {
+    font-size: 3rem;
+    color: $silver;
+  }
+  > button {
+    padding: 10px 10px;
+    background-color: $grey;
+    border: none;
+    color: $silver;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all linear 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: $silver;
+      color: $black;
+    }
+  }
+}
+
+section {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    min-height: 90vh;
+    width: 80%;
+    background-color: $greenish;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .search {
+      width: 90%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      margin: 10px 0 30px 0;
+
+      input {
+        width: 96%;
+        padding: 10px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        outline: none;
+        font-size: 1.4rem;
+      }
+      button {
+        width: 4%;
+        background-color: #ffff;
+        border: none;
+        padding: 8px 0 8px 8px;
+        color: $black;
+        font-size: 1.4rem;
+        outline: none;
+        border-radius: 20px 0 0 20px;
+      }
+    }
+
+    .main-container {
+      min-height: 90vh;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 10px;
+
+      .notes-card {
+        height: 300px;
+        width: 420px;
+        background-color: $grey;
+        border-radius: 10px;
+        textarea {
+          height: 230px;
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 10px;
+          border-radius: 10px;
+          background-color: $grey;
+          color: $silver;
+          font-size: 1.2rem;
+          font-family: "Playpen Sans";
+          resize: none;
+        }
+        div {
+          height: 70px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 20px 0 20px;
+
+          p {
+            font-size: 1.5rem;
+            color: $silver;
+          }
+
+          button {
+            background-color: $grey;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: $silver;
+            transition: all linear 0.3s;
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+      .add-notes-card {
+        height: 300px;
+        width: 420px;
+        background-color: $black;
+        border-radius: 10px;
+
+        textarea {
+          height: 230px;
+          width: 100%;
+          background-color: $black;
+          color: $silver;
+          border: none;
+          resize: none;
+          outline: none;
+          font-size: 1.2rem;
+          font-family: "Playpen Sans";
+          padding: 10px;
+          border-radius: 10px;
+        }
+
+        div {
+          height: 70px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 20px;
+
+          p{
+            font-size: 1.5rem;
+            color: $silver;
+          }
+          button {
+            font-size: 1.5rem;
+            border-radius: 20px;
+            border: none;
+            background-color: $greenish;
+            color: $black;
+            padding: 5px 20px;
+            cursor: pointer;
+            transition: all linear 0.3s;
+          }
+        }
+      }
+    }
+  }
+}

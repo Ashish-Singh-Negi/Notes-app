@@ -1,4 +1,3 @@
-import React, { RefCallback, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 
 interface NoteProps {

@@ -1,4 +1,3 @@
-import React from "react";
 import { BiSolidSun } from "react-icons/bi";
 
 const Header = () => {

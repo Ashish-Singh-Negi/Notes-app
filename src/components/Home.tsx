@@ -47,7 +47,7 @@ const Home = () => {
   useEffect(() => {
     isTrue ? localStorage.setItem("AllSavedNotes", JSON.stringify(notes)) : "";
     setIsTrue(true);
-  }, [notes]);
+  }, [notes,isTrue]);
 
   return (
     <section>

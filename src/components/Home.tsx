@@ -10,13 +10,7 @@ type NotesType = {
 };
 
 const Home = () => {
-  const [notes, setNotes] = useState<NotesType[]>([
-    {
-      id: crypto.randomUUID(),
-      note: "This is sample note",
-      date: `${new Date().toLocaleString()}`,
-    },
-  ]);
+  const [notes, setNotes] = useState<NotesType[]>([]);
 
   const [noteText, setNoteTest] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
@@ -55,7 +49,6 @@ const Home = () => {
   useEffect(() => {
     isTrue ? localStorage.setItem("AllSavedNotes", JSON.stringify(notes)) : "";
     setIsTrue(true);
-    console.log(notes)
   }, [notes]);
 
   return (

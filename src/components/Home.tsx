@@ -43,7 +43,7 @@ const Home = () => {
     const allSavedNotes = JSON.parse(
       String(localStorage.getItem("AllSavedNotes"))
     );
-    setNotes(allSavedNotes);
+    allSavedNotes ? setNotes(allSavedNotes) : "";
   }, []);
 
   useEffect(() => {

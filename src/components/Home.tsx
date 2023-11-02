@@ -10,7 +10,13 @@ type NotesType = {
 };
 
 const Home = () => {
-  const [notes, setNotes] = useState<NotesType[]>([]);
+  const [notes, setNotes] = useState<NotesType[]>([
+    {
+      id: crypto.randomUUID(),
+      note: "This is sample note",
+      date: `${new Date().toLocaleString()}`,
+    },
+  ]);
 
   const [noteText, setNoteTest] = useState<string>("");
   const [searchText, setSearchText] = useState<string>("");
@@ -20,14 +26,16 @@ const Home = () => {
   const addNoteHandler = () => {
     const date = new Date();
     noteText.trim().length >= 1
-      ? setNotes((prevNotes) => [
-          ...prevNotes,
-          {
-            id: crypto.randomUUID(),
-            note: noteText,
-            date: `${date.toLocaleDateString()}`,
-          },
-        ])
+      ? setNotes((prevNotes) => {
+          return [
+            ...prevNotes,
+            {
+              id: crypto.randomUUID(),
+              note: noteText,
+              date: `${date.toLocaleDateString()}`,
+            },
+          ];
+        })
       : "";
     setNoteTest("");
   };
@@ -47,7 +55,8 @@ const Home = () => {
   useEffect(() => {
     isTrue ? localStorage.setItem("AllSavedNotes", JSON.stringify(notes)) : "";
     setIsTrue(true);
-  }, [notes, isTrue]);
+    console.log(notes)
+  }, [notes]);
 
   return (
     <section>
@@ -64,7 +73,7 @@ const Home = () => {
 
         <div className="main-container">
           {notes
-            .filter((val) => val.note.toLowerCase().includes(searchText))
+            .filter((item) => item.note.toLowerCase().includes(searchText))
             .map((val) => {
               return (
                 <Note

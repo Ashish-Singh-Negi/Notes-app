@@ -66,7 +66,7 @@ const Home = () => {
 
         <div className="main-container">
           {notes
-            .filter((item) => item.note.toLowerCase().includes(searchText))
+            .filter((item) => item.note.toLowerCase().includes(searchText.toLowerCase()))
             .map((val) => {
               return (
                 <Note

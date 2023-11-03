@@ -35,7 +35,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     &:hover {
       background-color: $silver;
       color: $black;
@@ -48,7 +48,7 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
-
+  
   .container {
     min-height: 90vh;
     width: 80%;
@@ -62,15 +62,7 @@ section {
       display: flex;
       align-items: center;
       margin: 10px 0 30px 0;
-
-      input {
-        width: 96%;
-        padding: 10px;
-        border: none;
-        border-radius: 0 20px 20px 0;
-        outline: none;
-        font-size: 1.4rem;
-      }
+      
       button {
         width: 4%;
         background-color: #ffff;
@@ -81,8 +73,16 @@ section {
         outline: none;
         border-radius: 20px 0 0 20px;
       }
+      input {
+        width: 96%;
+        padding: 10px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        outline: none;
+        font-size: 1.4rem;
+      }
     }
-
+    
     .main-container {
       min-height: 90vh;
       width: 90%;
@@ -91,7 +91,7 @@ section {
       gap: 20px;
       flex-wrap: wrap;
       padding: 10px;
-
+      
       .notes-card {
         height: 300px;
         width: 420px;
@@ -117,12 +117,12 @@ section {
           align-items: center;
           justify-content: space-between;
           padding: 0 20px 0 20px;
-
+          
           p {
             font-size: 1.5rem;
             color: $silver;
           }
-
+          
           button {
             background-color: $grey;
             border: none;
@@ -130,7 +130,7 @@ section {
             cursor: pointer;
             color: $silver;
             transition: all linear 0.3s;
-
+            
             &:hover {
               color: red;
             }
@@ -142,7 +142,7 @@ section {
         width: 420px;
         background-color: $black;
         border-radius: 10px;
-
+        
         textarea {
           height: 230px;
           width: 100%;
@@ -156,14 +156,14 @@ section {
           padding: 10px;
           border-radius: 10px;
         }
-
+        
         div {
           height: 70px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin: 0 20px;
-
+          
           p{
             font-size: 1.5rem;
             color: $silver;
@@ -178,6 +178,32 @@ section {
             cursor: pointer;
             transition: all linear 0.3s;
           }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+  header{
+    height: 65px;
+    position: fixed;
+    z-index: 1;
+  }
+  section{
+    .container{
+      position: absolute;
+      top: 65px;
+      width: 100%;
+      .search{
+        width: 95%;
+        margin: 15px 0px 20px;
+        input{
+          width: 100%;
+          border-radius: 15px;
+        }
+        button{
+          display: none;
         }
       }
     }
